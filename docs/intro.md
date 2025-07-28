@@ -2,46 +2,27 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction to Perga
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Perga is a personal organizer that helps you plan and organize your days and months efficiently.
 
-## Getting Started
+## Project Components
 
-Get started by **creating a new site**.
+Perga consists of two main components:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+1. **[Perga API](https://github.com/dbtiunov/perga-api)**: The backend service providing the core functionality and data storage.
+2. **[Perga Web](https://github.com/dbtiunov/perga-web)**: A standalone browser client that connects to the backend to provide a user-friendly web interface.
 
-### What you'll need
+## Key Features
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- **Daily planner**: Organize your daily tasks and activities
+- **Monthly agenda and backlog**: Plan ahead and keep track of your monthly goals
+- **User authentication**: Secure access to your personal data
+- **Responsive design**: Works on desktop and mobile devices
 
-## Generate a new site
+## Documentation Structure
 
-Generate a new Docusaurus site using the **classic template**.
+This documentation provides detailed information about both components of the Perga system:
 
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- [Perga API Documentation](./perga-api): Details about the backend API, including installation, endpoints, and development guidelines.
+- [Perga Web Documentation](./perga-web): Information about the web client, including setup, project structure, and development workflow.

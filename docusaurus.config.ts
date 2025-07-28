@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Perga',
-  tagline: 'Personal organizer',
+  tagline: 'Personal organizer that helps you plan and organize your days and months efficiently',
   url: 'https://dbtiunov.github.io',
   baseUrl: '/perga-docs/',
 
@@ -42,7 +42,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/dbtiunov/perga-docs/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -53,7 +53,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/dbtiunov/perga-docs/tree/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -70,9 +70,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Perga Docs',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Perga Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -80,12 +80,16 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Documentation',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          href: 'https://github.com/dbtiunov/perga-api',
+          label: 'Perga API',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/dbtiunov/perga-web',
+          label: 'Perga Web',
           position: 'right',
         },
       ],
@@ -97,25 +101,29 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Introduction',
               to: '/docs/intro',
+            },
+            {
+              label: 'Perga API',
+              to: '/docs/perga-api',
+            },
+            {
+              label: 'Perga Web',
+              to: '/docs/perga-web',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Projects',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Perga API',
+              href: 'https://github.com/dbtiunov/perga-api',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Perga Web',
+              href: 'https://github.com/dbtiunov/perga-web',
             },
           ],
         },
@@ -123,17 +131,13 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/dbtiunov',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Perga. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
