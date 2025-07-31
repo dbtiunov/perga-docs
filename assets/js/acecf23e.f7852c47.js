@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkperga_docs=self.webpackChunkperga_docs||[]).push([[903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/perga-docs/blog","blogTitle":"Blog","authorsListPath":"/perga-docs/blog/authors"}')}}]);
