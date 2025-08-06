@@ -7,8 +7,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Perga',
   tagline: 'Personal organizer that helps you plan and organize your days and months efficiently',
-  url: 'https://dbtiunov.github.io',
-  baseUrl: '/perga-docs/',
+  url: 'https://docs.getperga.me',
+  baseUrl: '/',
 
   favicon: 'img/favicon.ico',
   organizationName: 'dbtiunov',
