@@ -28,3 +28,25 @@
   --ifm-color-primary-lightest: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Fix SVG icons in dark mode */
+[data-theme='dark'] svg {
+  fill: #e0e0e0;
+}
+
+/* Ensure navbar logo is visible in dark mode */
+[data-theme='dark'] .navbar__logo img {
+  filter: invert(1);
+}
+
+/* Improve button contrast in dark mode */
+[data-theme='dark'] .button--secondary {
+  background-color: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+[data-theme='dark'] .button--secondary:hover {
+  background-color: #555;
+  color: #fff;
+}
