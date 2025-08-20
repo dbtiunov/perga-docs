@@ -83,6 +83,11 @@ const config: Config = {
           label: 'Documentation',
         },
         {
+          href: 'https://demo.getperga.me/',
+          label: 'Demo',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/dbtiunov/perga-api',
           label: 'Perga API',
           position: 'right',
@@ -130,6 +135,10 @@ const config: Config = {
         {
           title: 'More',
           items: [
+            {
+              label: 'Demo',
+              href: 'https://demo.getperga.me/',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/dbtiunov',
