@@ -20,6 +20,12 @@ Perga consists of two main components:
 - **User authentication**: Secure access to your personal data
 - **Responsive design**: Works on desktop and mobile devices
 
+<p>
+  <img src="/img/planner_screenshot.png" alt="Planner Screenshot" width="300" />
+  <span>&nbsp;&nbsp;&nbsp;</span>
+  <img src="/img/api_screenshot.png" alt="API Screenshot" width="300" />
+</p>
+
 ## Try Perga Demo
 
 You can try out Perga without installation by visiting demo version at [https://demo.getperga.me/](https://demo.getperga.me/).
