@@ -20,12 +20,6 @@ The web client for the Perga personal organizer system, providing a user-friendl
 - User authentication and settings
 - Responsive design with mobile support
 
-## Roadmap
-
-- Notes
-- Projects
-- Mobile app
-
 ## Tech Stack
 
 - React 19

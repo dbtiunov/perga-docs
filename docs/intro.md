@@ -36,3 +36,11 @@ This documentation provides detailed information about both components of the Pe
 
 - [Perga API Documentation](./perga-api): Details about the backend API, including installation, endpoints, and development guidelines.
 - [Perga Web Documentation](./perga-web): Information about the web client, including setup, project structure, and development workflow.
+
+## Roadmap
+
+* Notes
+* Projects
+* Inbox
+* Keyboard Shortcuts
+* Mobile App
