@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Perga API | Perga</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.getperga.me/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.getperga.me/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.getperga.me/docs/perga-api"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Perga API | Perga"><meta data-rh="true" name="description" content="License: MIT"><meta data-rh="true" property="og:description" content="License: MIT"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://docs.getperga.me/docs/perga-api"><link data-rh="true" rel="alternate" href="https://docs.getperga.me/docs/perga-api" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.getperga.me/docs/perga-api" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Perga API","item":"https://docs.getperga.me/docs/perga-api"}]}</script><link rel="stylesheet" href="/assets/css/styles.841768e4.css">
-<script src="/assets/js/runtime~main.44796a32.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.d78de8f7.js" defer="defer"></script>
 <script src="/assets/js/main.6e7b3422.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -17,134 +17,151 @@
 <img decoding="async" loading="lazy" src="https://github.com/dbtiunov/perga-api/actions/workflows/ci.yml/badge.svg" alt="Build" class="img_ev3q"></p>
 <p>Personal organizer backend that provides the core functionality for the Perga system.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
-<p><strong>Perga API</strong> is the core of the product, providing a RESTful API for the Perga personal organizer system. It works in conjunction with <a href="/docs/perga-web">Perga Web</a>, which is a standalone browser client that connects to the backend to provide a user-friendly web interface.</p>
+<p>Perga API is a FastAPI-based backend that powers the Perga personal organizer. It exposes REST API consumed by the standalone web client <a href="/docs/perga-web">Perga Web</a>.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="features">Features<a href="#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features">​</a></h2>
 <ul>
 <li>Daily planner</li>
-<li>Monthly agenda and backlog</li>
+<li>Monthly and custom agendas</li>
 <li>RESTful API with FastAPI</li>
 <li>User authentication with JWT tokens</li>
-<li>Comprehensive documentation with Swagger UI</li>
+<li>Interactive docs (Swagger UI / ReDoc)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="demo-and-documentation">Demo and Documentation<a href="#demo-and-documentation" class="hash-link" aria-label="Direct link to Demo and Documentation" title="Direct link to Demo and Documentation">​</a></h2>
+<ul>
+<li>Demo: <a href="https://demo.getperga.me/" target="_blank" rel="noopener noreferrer">https://demo.getperga.me/</a></li>
+<li>Repo: <a href="https://github.com/dbtiunov/perga-api" target="_blank" rel="noopener noreferrer">https://github.com/dbtiunov/perga-api</a></li>
+<li>Docs (this page): <a href="https://dbtiunov.github.io/perga-docs/docs/perga-api" target="_blank" rel="noopener noreferrer">https://dbtiunov.github.io/perga-docs/docs/perga-api</a></li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="tech-stack">Tech Stack<a href="#tech-stack" class="hash-link" aria-label="Direct link to Tech Stack" title="Direct link to Tech Stack">​</a></h2>
 <ul>
-<li><strong>FastAPI</strong>: Modern, fast web framework for building APIs</li>
-<li><strong>SQLAlchemy</strong>: SQL toolkit and ORM</li>
-<li><strong>Alembic</strong>: Database migration tool</li>
-<li><strong>PostgreSQL</strong>: Relational database</li>
-<li><strong>JWT</strong>: JSON Web Tokens for authentication</li>
-<li><strong>Pydantic</strong>: Data validation and settings management</li>
-<li><strong>Pytest</strong>: Testing framework</li>
+<li>FastAPI</li>
+<li>SQLAlchemy</li>
+<li>Alembic</li>
+<li>PostgreSQL</li>
+<li>Pydantic Settings</li>
+<li>JWT-based auth</li>
+<li>Pytest</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="installation">Installation<a href="#installation" class="hash-link" aria-label="Direct link to Installation" title="Direct link to Installation">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="prerequisites">Prerequisites<a href="#prerequisites" class="hash-link" aria-label="Direct link to Prerequisites" title="Direct link to Prerequisites">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="requirements">Requirements<a href="#requirements" class="hash-link" aria-label="Direct link to Requirements" title="Direct link to Requirements">​</a></h2>
 <ul>
 <li>Python 3.10+</li>
 <li>PostgreSQL 15+</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="setup">Setup<a href="#setup" class="hash-link" aria-label="Direct link to Setup" title="Direct link to Setup">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="installation-local">Installation (local)<a href="#installation-local" class="hash-link" aria-label="Direct link to Installation (local)" title="Direct link to Installation (local)">​</a></h2>
 <ol>
-<li>
-<p>Clone the repository:</p>
+<li>Clone and enter the repo</li>
+</ol>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">git clone https://github.com/dbtiunov/perga-api.git</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">cd perga-api</span><br></span></code></pre></div></div>
-</li>
-<li>
-<p>Create a virtual environment and activate it:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">python -m venv .venv</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">source .venv/bin/activate  # On Windows: .venv\Scripts\activate</span><br></span></code></pre></div></div>
-</li>
-<li>
-<p>Install dependencies:</p>
+<ol start="2">
+<li>Create and activate a virtual environment</li>
+</ol>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">python -m venv .venv</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">source .venv/bin/activate   # Windows: .venv\Scripts\activate</span><br></span></code></pre></div></div>
+<ol start="3">
+<li>Install dependencies</li>
+</ol>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">pip install -r requirements.txt</span><br></span></code></pre></div></div>
-</li>
-<li>
-<p>Create a <code>.env</code> file based on <code>.env.example</code>:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">cp .env.example .env</span><br></span></code></pre></div></div>
-</li>
-<li>
-<p>Update the <code>.env</code> file with your specific configuration:</p>
+<ol start="4">
+<li>Configure environment</li>
+</ol>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">cp .env.example .env</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># then edit .env</span><br></span></code></pre></div></div>
+<p>Important variables (from <code>.env.example</code>):</p>
 <ul>
-<li>Set a secure <code>SECRET_KEY</code></li>
-<li>Configure PostgreSQL connection details</li>
-<li>Set <code>CORS_ORIGINS</code></li>
+<li><code>SECRET_KEY</code> — any secure random string</li>
+<li><code>POSTGRES_HOST</code>, <code>POSTGRES_USER</code>, <code>POSTGRES_PASSWORD</code>, <code>POSTGRES_DB</code></li>
+<li><code>CORS_ORIGINS</code> — JSON array of allowed origins (e.g. [&quot;http://localhost:5173&quot;])</li>
+<li><code>ROOT_URL_REDIRECT</code> — optional URL to redirect <code>/</code> to (used by nginx demo)</li>
 </ul>
-</li>
-<li>
-<p>Run database migrations:</p>
+<ol start="5">
+<li>Run migrations</li>
+</ol>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">alembic upgrade head</span><br></span></code></pre></div></div>
-</li>
-<li>
-<p>Start the application:</p>
+<ol start="6">
+<li>Start the app</li>
+</ol>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">uvicorn app.main:app --reload</span><br></span></code></pre></div></div>
-</li>
-</ol>
-<p>The API will be available at <a href="http://localhost:8000" target="_blank" rel="noopener noreferrer">http://localhost:8000</a> with the Swagger documentation at <a href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer">http://localhost:8000/docs</a>.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="docker-setup">Docker Setup<a href="#docker-setup" class="hash-link" aria-label="Direct link to Docker Setup" title="Direct link to Docker Setup">​</a></h2>
-<p>You can also run the application using Docker:</p>
-<ol>
-<li>
-<p>Build and start the containers:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">docker-compose up -d</span><br></span></code></pre></div></div>
-</li>
-<li>
-<p>The API will be available at <a href="http://localhost:8080" target="_blank" rel="noopener noreferrer">http://localhost:8080</a></p>
-</li>
-</ol>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="api-documentation">API Documentation<a href="#api-documentation" class="hash-link" aria-label="Direct link to API Documentation" title="Direct link to API Documentation">​</a></h2>
-<p>Once the application is running, you can access the interactive API documentation:</p>
 <ul>
-<li>Swagger UI: <a href="http://localhost:8080/docs" target="_blank" rel="noopener noreferrer">http://localhost:8080/docs</a></li>
-<li>ReDoc: <a href="http://localhost:8080/redoc" target="_blank" rel="noopener noreferrer">http://localhost:8080/redoc</a></li>
+<li>Base URL: <a href="http://localhost:8000" target="_blank" rel="noopener noreferrer">http://localhost:8000</a></li>
+<li>Swagger UI: <a href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer">http://localhost:8000/docs</a></li>
+<li>ReDoc: <a href="http://localhost:8000/redoc" target="_blank" rel="noopener noreferrer">http://localhost:8000/redoc</a></li>
+<li>Health: <code>GET /health/</code> → <code>200 OK</code></li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="api-endpoints">API Endpoints<a href="#api-endpoints" class="hash-link" aria-label="Direct link to API Endpoints" title="Direct link to API Endpoints">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="docker">Docker<a href="#docker" class="hash-link" aria-label="Direct link to Docker" title="Direct link to Docker">​</a></h2>
+<p>A Docker Compose setup is included. It runs:</p>
+<ul>
+<li><code>db</code>: PostgreSQL 15</li>
+<li><code>app</code>: the FastAPI app (exposed on host port 8000)</li>
+<li><code>nginx</code>: reverse proxy that serves the app on host port 8080</li>
+</ul>
+<p>Start/stop:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">docker-compose up -d</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># ...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">docker-compose down</span><br></span></code></pre></div></div>
+<p>Default ports and health:</p>
+<ul>
+<li>App direct: <a href="http://localhost:8000" target="_blank" rel="noopener noreferrer">http://localhost:8000</a> (health: <code>GET /health/</code>)</li>
+<li>Via nginx: <a href="http://localhost:8080" target="_blank" rel="noopener noreferrer">http://localhost:8080</a> (health inside nginx: <code>GET /health/</code>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="api-documentation">API Documentation<a href="#api-documentation" class="hash-link" aria-label="Direct link to API Documentation" title="Direct link to API Documentation">​</a></h2>
+<ul>
+<li>Swagger UI: <a href="http://localhost:8080/docs" target="_blank" rel="noopener noreferrer">http://localhost:8080/docs</a> (via nginx) or <a href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer">http://localhost:8000/docs</a> (direct)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="api-endpoints-v1">API Endpoints (v1)<a href="#api-endpoints-v1" class="hash-link" aria-label="Direct link to API Endpoints (v1)" title="Direct link to API Endpoints (v1)">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="authentication">Authentication<a href="#authentication" class="hash-link" aria-label="Direct link to Authentication" title="Direct link to Authentication">​</a></h3>
 <ul>
-<li><code>POST /api/v1/auth/signup/</code>: Register a new user</li>
-<li><code>POST /api/v1/auth/access_token/</code>: Get access token (form data)</li>
-<li><code>POST /api/v1/auth/access_token_json/</code>: Get access token (JSON)</li>
-<li><code>POST /api/v1/auth/refresh_token/</code>: Refresh access token</li>
-<li><code>GET /api/v1/auth/user/</code>: Get current user information</li>
-<li><code>PUT /api/v1/auth/user/</code>: Update user information</li>
+<li><code>POST /api/v1/auth/signup/</code> — Register a new user</li>
+<li><code>POST /api/v1/auth/access_token/</code> — Get access token (form data)</li>
+<li><code>POST /api/v1/auth/access_token_json/</code> — Get access token (JSON)</li>
+<li><code>POST /api/v1/auth/refresh_token/</code> — Refresh access token</li>
+<li><code>GET /api/v1/auth/user/</code> — Get current user</li>
+<li><code>PUT /api/v1/auth/user/</code> — Update current user</li>
+<li><code>PUT /api/v1/auth/user/password/</code> — Change password</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="planner-days">Planner Days<a href="#planner-days" class="hash-link" aria-label="Direct link to Planner Days" title="Direct link to Planner Days">​</a></h3>
 <ul>
-<li><code>GET /api/v1/planner/days/</code>: Get planner items for a specific day</li>
-<li><code>POST /api/v1/planner/days/</code>: Add a new item for a specific day</li>
-<li><code>PUT /api/v1/planner/days/{item_id}</code>: Update a planner day item</li>
-<li><code>DELETE /api/v1/planner/days/{item_id}</code>: Delete a planner day item</li>
+<li><code>GET /api/v1/planner/days/items/?days=YYYY-MM-DD&amp;days=YYYY-MM-DD</code> — Get items for multiple days; returns a dictionary keyed by date string</li>
+<li><code>POST /api/v1/planner/days/items/</code> — Create a new day item</li>
+<li><code>PUT /api/v1/planner/days/items/{item_id}/</code> — Update a day item</li>
+<li><code>DELETE /api/v1/planner/days/items/{item_id}/</code> — Delete a day item</li>
+<li><code>POST /api/v1/planner/days/items/reorder/</code> — Reorder items for a day</li>
+<li><code>POST /api/v1/planner/days/items/{item_id}/copy/</code> — Copy a day item to another day</li>
+<li><code>POST /api/v1/planner/days/items/{item_id}/snooze/</code> — Snooze a day item to another day</li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="monthly-agenda-and-backlog">Monthly Agenda and Backlog<a href="#monthly-agenda-and-backlog" class="hash-link" aria-label="Direct link to Monthly Agenda and Backlog" title="Direct link to Monthly Agenda and Backlog">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="agendas-monthly-custom-archived">Agendas (monthly, custom, archived)<a href="#agendas-monthly-custom-archived" class="hash-link" aria-label="Direct link to Agendas (monthly, custom, archived)" title="Direct link to Agendas (monthly, custom, archived)">​</a></h3>
 <ul>
-<li><code>GET /api/v1/planner/agendas/</code>: Get agendas by specific day</li>
-<li><code>GET /api/v1/planner/agendas/{agenda_id}/items</code>: Get items for a specific agenda</li>
-<li><code>POST /api/v1/planner/agendas/{agenda_id}/items</code>: Create a new agenda item</li>
-<li><code>PUT /api/v1/planner/agendas/items/{item_id}</code>: Update an agenda item</li>
-<li><code>DELETE /api/v1/planner/agendas/items/{item_id}</code>: Delete an agenda item</li>
+<li><code>GET /api/v1/planner/agendas/?agenda_types=monthly&amp;selected_day=YYYY-MM-DD&amp;with_counts=false</code> — List agendas (filters optional)</li>
+<li><code>POST /api/v1/planner/agendas/</code> — Create an agenda</li>
+<li><code>PUT /api/v1/planner/agendas/{agenda_id}/</code> — Update an agenda (including archive/unarchive)</li>
+<li><code>DELETE /api/v1/planner/agendas/{agenda_id}/</code> — Delete an agenda</li>
+<li><code>POST /api/v1/planner/agendas/reorder/</code> — Reorder agendas</li>
+<li><code>POST /api/v1/planner/agendas/{agenda_id}/action/</code> — Perform an action on agenda (e.g., resolve monthly)</li>
+</ul>
+<p>Agenda items:</p>
+<ul>
+<li><code>GET /api/v1/planner/agendas/items/?agenda_ids=1&amp;agenda_ids=2</code> — Get items for multiple agendas; returns a dictionary keyed by agenda id</li>
+<li><code>POST /api/v1/planner/agendas/items/</code> — Create an agenda item</li>
+<li><code>PUT /api/v1/planner/agendas/items/{item_id}/</code> — Update an agenda item</li>
+<li><code>DELETE /api/v1/planner/agendas/items/{item_id}/</code> — Delete an agenda item</li>
+<li><code>POST /api/v1/planner/agendas/items/reorder/</code> — Reorder items within an agenda</li>
+<li><code>POST /api/v1/planner/agendas/items/{item_id}/copy/</code> — Copy an item (optionally to another agenda)</li>
+<li><code>POST /api/v1/planner/agendas/items/{item_id}/move/</code> — Move an item to another agenda</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="development">Development<a href="#development" class="hash-link" aria-label="Direct link to Development" title="Direct link to Development">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="project-structure">Project Structure<a href="#project-structure" class="hash-link" aria-label="Direct link to Project Structure" title="Direct link to Project Structure">​</a></h3>
 <ul>
-<li><code>app/</code>: Main application package<!-- -->
+<li><code>app/</code>
 <ul>
-<li><code>api/</code>: API endpoints and routers</li>
-<li><code>core/</code>: Core functionality (config, database)</li>
-<li><code>models/</code>: SQLAlchemy models</li>
-<li><code>schemas/</code>: Pydantic schemas for request/response validation</li>
-<li><code>services/</code>: Business logic</li>
-<li><code>tests/</code>: Test files</li>
+<li><code>api/</code> — API endpoints and routers</li>
+<li><code>core/</code> — config, DB</li>
+<li><code>models/</code> — SQLAlchemy models</li>
+<li><code>schemas/</code> — Pydantic models</li>
+<li><code>services/</code> — business logic</li>
+<li><code>tests/</code> — test suite</li>
 </ul>
 </li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="testing">Testing<a href="#testing" class="hash-link" aria-label="Direct link to Testing" title="Direct link to Testing">​</a></h3>
-<p>Run tests with pytest:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">python -m pytest</span><br></span></code></pre></div></div>
-<p>Run specific tests:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">python -m pytest app/tests/test_services/test_user_service.py</span><br></span></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">python -m pytest</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># or</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">python -m pytest app/tests/test_services/test_user_service.py</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="database-migrations">Database Migrations<a href="#database-migrations" class="hash-link" aria-label="Direct link to Database Migrations" title="Direct link to Database Migrations">​</a></h3>
-<p>Create a new migration:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">./scripts/create_migration.sh &lt;migration_name&gt;</span><br></span></code></pre></div></div>
-<p>Apply migrations:</p>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">alembic upgrade head</span><br></span></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">./scripts/create_migration.sh &lt;migration_name&gt;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"># then</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">alembic upgrade head</span><br></span></code></pre></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="license">License<a href="#license" class="hash-link" aria-label="Direct link to License" title="Direct link to License">​</a></h2>
-<p>This project is licensed under the MIT License - see the <a href="https://github.com/dbtiunov/perga-api/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">LICENSE</a> file for details.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/dbtiunov/perga-docs/tree/main/docs/perga-api.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/intro"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Introduction to Perga</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/perga-web"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Perga Web</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a></li><li><a href="#tech-stack" class="table-of-contents__link toc-highlight">Tech Stack</a></li><li><a href="#installation" class="table-of-contents__link toc-highlight">Installation</a><ul><li><a href="#prerequisites" class="table-of-contents__link toc-highlight">Prerequisites</a></li><li><a href="#setup" class="table-of-contents__link toc-highlight">Setup</a></li></ul></li><li><a href="#docker-setup" class="table-of-contents__link toc-highlight">Docker Setup</a></li><li><a href="#api-documentation" class="table-of-contents__link toc-highlight">API Documentation</a></li><li><a href="#api-endpoints" class="table-of-contents__link toc-highlight">API Endpoints</a><ul><li><a href="#authentication" class="table-of-contents__link toc-highlight">Authentication</a></li><li><a href="#planner-days" class="table-of-contents__link toc-highlight">Planner Days</a></li><li><a href="#monthly-agenda-and-backlog" class="table-of-contents__link toc-highlight">Monthly Agenda and Backlog</a></li></ul></li><li><a href="#development" class="table-of-contents__link toc-highlight">Development</a><ul><li><a href="#project-structure" class="table-of-contents__link toc-highlight">Project Structure</a></li><li><a href="#testing" class="table-of-contents__link toc-highlight">Testing</a></li><li><a href="#database-migrations" class="table-of-contents__link toc-highlight">Database Migrations</a></li></ul></li><li><a href="#license" class="table-of-contents__link toc-highlight">License</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/perga-api">Perga API</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/perga-web">Perga Web</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Projects</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/dbtiunov/perga-api" target="_blank" rel="noopener noreferrer" class="footer__link-item">Perga API<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/dbtiunov/perga-web" target="_blank" rel="noopener noreferrer" class="footer__link-item">Perga Web<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://demo.getperga.me/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Demo<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/dbtiunov" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Perga. Built with Docusaurus.</div></div></div></footer></div>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/dbtiunov/perga-api/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">LICENSE</a> file for details.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/dbtiunov/perga-docs/tree/main/docs/perga-api.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/intro"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Introduction to Perga</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/perga-web"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Perga Web</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#features" class="table-of-contents__link toc-highlight">Features</a></li><li><a href="#demo-and-documentation" class="table-of-contents__link toc-highlight">Demo and Documentation</a></li><li><a href="#tech-stack" class="table-of-contents__link toc-highlight">Tech Stack</a></li><li><a href="#requirements" class="table-of-contents__link toc-highlight">Requirements</a></li><li><a href="#installation-local" class="table-of-contents__link toc-highlight">Installation (local)</a></li><li><a href="#docker" class="table-of-contents__link toc-highlight">Docker</a></li><li><a href="#api-documentation" class="table-of-contents__link toc-highlight">API Documentation</a></li><li><a href="#api-endpoints-v1" class="table-of-contents__link toc-highlight">API Endpoints (v1)</a><ul><li><a href="#authentication" class="table-of-contents__link toc-highlight">Authentication</a></li><li><a href="#planner-days" class="table-of-contents__link toc-highlight">Planner Days</a></li><li><a href="#agendas-monthly-custom-archived" class="table-of-contents__link toc-highlight">Agendas (monthly, custom, archived)</a></li></ul></li><li><a href="#development" class="table-of-contents__link toc-highlight">Development</a><ul><li><a href="#project-structure" class="table-of-contents__link toc-highlight">Project Structure</a></li><li><a href="#testing" class="table-of-contents__link toc-highlight">Testing</a></li><li><a href="#database-migrations" class="table-of-contents__link toc-highlight">Database Migrations</a></li></ul></li><li><a href="#license" class="table-of-contents__link toc-highlight">License</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/perga-api">Perga API</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/perga-web">Perga Web</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Projects</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/dbtiunov/perga-api" target="_blank" rel="noopener noreferrer" class="footer__link-item">Perga API<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/dbtiunov/perga-web" target="_blank" rel="noopener noreferrer" class="footer__link-item">Perga Web<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://demo.getperga.me/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Demo<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/dbtiunov" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Perga. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
