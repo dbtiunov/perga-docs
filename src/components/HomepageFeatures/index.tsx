@@ -15,21 +15,21 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/feature1.svg').default,
     description: (
       <>
-        Stay focused with a clean daily view that helps you manage time effectively.
+        Stay focused with a clean daily view that helps you manage tasks effectively.
       </>
     ),
   },
   {
-    title: 'Monthly Agenda and Backlog',
+    title: 'Monthly and Custom Agendas',
     Svg: require('@site/static/img/feature2.svg').default,
     description: (
       <>
-        Plan ahead with a monthly overview and keep your long-term goals organized in a backlog.
+        Plan ahead with a monthly overview and keep your long-term goals organized in custom agendas.
       </>
     ),
   },
   {
-    title: 'Responsive design',
+    title: 'Responsive design and Dark Theme',
     Svg: require('@site/static/img/feature3.svg').default,
     description: (
       <>
