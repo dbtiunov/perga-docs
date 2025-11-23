@@ -16,9 +16,9 @@ Perga consists of two main components:
 ## Key Features
 
 - **Daily planner**: Organize your daily tasks and activities
-- **Monthly agenda and backlog**: Plan ahead and keep track of your monthly goals
+- **Monthly and custom agendas**: Plan ahead and keep track of your monthly goals
 - **User authentication**: Secure access to your personal data
-- **Responsive design**: Works on desktop and mobile devices
+- **Responsive design and dark theme**: Works on desktop and mobile devices
 
 <p>
   <img src="/img/planner_screenshot.png" alt="Planner Screenshot" width="300" />
