@@ -12,151 +12,162 @@ Personal organizer backend that provides the core functionality for the Perga sy
 
 ## Overview
 
-**Perga API** is the core of the product, providing a RESTful API for the Perga personal organizer system. It works in conjunction with [Perga Web](./perga-web), which is a standalone browser client that connects to the backend to provide a user-friendly web interface.
+Perga API is a FastAPI-based backend that powers the Perga personal organizer. It exposes REST API consumed by the standalone web client [Perga Web](./perga-web).
 
 ## Features
 
 - Daily planner
-- Monthly agenda and backlog
+- Monthly and custom agendas
 - RESTful API with FastAPI
 - User authentication with JWT tokens
-- Comprehensive documentation with Swagger UI
+- Interactive docs (Swagger UI / ReDoc)
+
+## Demo and Documentation
+
+- Demo: https://demo.getperga.me/
+- Repo: https://github.com/dbtiunov/perga-api
+- Docs (this page): https://dbtiunov.github.io/perga-docs/docs/perga-api
 
 ## Tech Stack
 
-- **FastAPI**: Modern, fast web framework for building APIs
-- **SQLAlchemy**: SQL toolkit and ORM
-- **Alembic**: Database migration tool
-- **PostgreSQL**: Relational database
-- **JWT**: JSON Web Tokens for authentication
-- **Pydantic**: Data validation and settings management
-- **Pytest**: Testing framework
+- FastAPI
+- SQLAlchemy
+- Alembic
+- PostgreSQL
+- Pydantic Settings
+- JWT-based auth
+- Pytest
 
-## Installation
-
-### Prerequisites
+## Requirements
 
 - Python 3.10+
 - PostgreSQL 15+
 
-### Setup
+## Installation (local)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/dbtiunov/perga-api.git
-   cd perga-api
-   ```
+1) Clone and enter the repo
+```bash
+git clone https://github.com/dbtiunov/perga-api.git
+cd perga-api
+```
 
-2. Create a virtual environment and activate it:
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
+2) Create and activate a virtual environment
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+```
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+3) Install dependencies
+```bash
+pip install -r requirements.txt
+```
 
-4. Create a `.env` file based on `.env.example`:
-   ```bash
-   cp .env.example .env
-   ```
+4) Configure environment
+```bash
+cp .env.example .env
+# then edit .env
+```
+Important variables (from `.env.example`):
+- `SECRET_KEY` — any secure random string
+- `POSTGRES_HOST`, `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`
+- `CORS_ORIGINS` — JSON array of allowed origins (e.g. ["http://localhost:5173"]) 
+- `ROOT_URL_REDIRECT` — optional URL to redirect `/` to (used by nginx demo)
 
-5. Update the `.env` file with your specific configuration:
-   - Set a secure `SECRET_KEY`
-   - Configure PostgreSQL connection details
-   - Set `CORS_ORIGINS`
+5) Run migrations
+```bash
+alembic upgrade head
+```
 
-6. Run database migrations:
-   ```bash
-   alembic upgrade head
-   ```
+6) Start the app
+```bash
+uvicorn app.main:app --reload
+```
+- Base URL: http://localhost:8000
+- Swagger UI: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
+- Health: `GET /health/` → `200 OK`
 
-7. Start the application:
-   ```bash
-   uvicorn app.main:app --reload
-   ```
+## Docker
 
-The API will be available at http://localhost:8000 with the Swagger documentation at http://localhost:8000/docs.
+A Docker Compose setup is included. It runs:
+- `db`: PostgreSQL 15
+- `app`: the FastAPI app (exposed on host port 8000)
+- `nginx`: reverse proxy that serves the app on host port 8080
 
-## Docker Setup
+Start/stop:
+```bash
+docker-compose up -d
+# ...
+docker-compose down
+```
 
-You can also run the application using Docker:
-
-1. Build and start the containers:
-   ```bash
-   docker-compose up -d
-   ```
-
-2. The API will be available at http://localhost:8080
+Default ports and health:
+- App direct: http://localhost:8000 (health: `GET /health/`)
+- Via nginx: http://localhost:8080 (health inside nginx: `GET /health/`)
 
 ## API Documentation
 
-Once the application is running, you can access the interactive API documentation:
+- Swagger UI: http://localhost:8080/docs (via nginx) or http://localhost:8000/docs (direct)
 
-- Swagger UI: http://localhost:8080/docs
-- ReDoc: http://localhost:8080/redoc
-
-## API Endpoints
+## API Endpoints (v1)
 
 ### Authentication
-
-- `POST /api/v1/auth/signup/`: Register a new user
-- `POST /api/v1/auth/access_token/`: Get access token (form data)
-- `POST /api/v1/auth/access_token_json/`: Get access token (JSON)
-- `POST /api/v1/auth/refresh_token/`: Refresh access token
-- `GET /api/v1/auth/user/`: Get current user information
-- `PUT /api/v1/auth/user/`: Update user information
+- `POST /api/v1/auth/signup/` — Register a new user
+- `POST /api/v1/auth/access_token/` — Get access token (form data)
+- `POST /api/v1/auth/access_token_json/` — Get access token (JSON)
+- `POST /api/v1/auth/refresh_token/` — Refresh access token
+- `GET /api/v1/auth/user/` — Get current user
+- `PUT /api/v1/auth/user/` — Update current user
+- `PUT /api/v1/auth/user/password/` — Change password
 
 ### Planner Days
+- `GET /api/v1/planner/days/items/?days=YYYY-MM-DD&days=YYYY-MM-DD` — Get items for multiple days; returns a dictionary keyed by date string
+- `POST /api/v1/planner/days/items/` — Create a new day item
+- `PUT /api/v1/planner/days/items/{item_id}/` — Update a day item
+- `DELETE /api/v1/planner/days/items/{item_id}/` — Delete a day item
+- `POST /api/v1/planner/days/items/reorder/` — Reorder items for a day
+- `POST /api/v1/planner/days/items/{item_id}/copy/` — Copy a day item to another day
+- `POST /api/v1/planner/days/items/{item_id}/snooze/` — Snooze a day item to another day
 
-- `GET /api/v1/planner/days/`: Get planner items for a specific day
-- `POST /api/v1/planner/days/`: Add a new item for a specific day
-- `PUT /api/v1/planner/days/{item_id}`: Update a planner day item
-- `DELETE /api/v1/planner/days/{item_id}`: Delete a planner day item
+### Agendas (monthly, custom, archived)
+- `GET /api/v1/planner/agendas/?agenda_types=monthly&selected_day=YYYY-MM-DD&with_counts=false` — List agendas (filters optional)
+- `POST /api/v1/planner/agendas/` — Create an agenda
+- `PUT /api/v1/planner/agendas/{agenda_id}/` — Update an agenda (including archive/unarchive)
+- `DELETE /api/v1/planner/agendas/{agenda_id}/` — Delete an agenda
+- `POST /api/v1/planner/agendas/reorder/` — Reorder agendas
+- `POST /api/v1/planner/agendas/{agenda_id}/action/` — Perform an action on agenda (e.g., resolve monthly)
 
-### Monthly Agenda and Backlog
-
-- `GET /api/v1/planner/agendas/`: Get agendas by specific day
-- `GET /api/v1/planner/agendas/{agenda_id}/items`: Get items for a specific agenda
-- `POST /api/v1/planner/agendas/{agenda_id}/items`: Create a new agenda item
-- `PUT /api/v1/planner/agendas/items/{item_id}`: Update an agenda item
-- `DELETE /api/v1/planner/agendas/items/{item_id}`: Delete an agenda item
+Agenda items:
+- `GET /api/v1/planner/agendas/items/?agenda_ids=1&agenda_ids=2` — Get items for multiple agendas; returns a dictionary keyed by agenda id
+- `POST /api/v1/planner/agendas/items/` — Create an agenda item
+- `PUT /api/v1/planner/agendas/items/{item_id}/` — Update an agenda item
+- `DELETE /api/v1/planner/agendas/items/{item_id}/` — Delete an agenda item
+- `POST /api/v1/planner/agendas/items/reorder/` — Reorder items within an agenda
+- `POST /api/v1/planner/agendas/items/{item_id}/copy/` — Copy an item (optionally to another agenda)
+- `POST /api/v1/planner/agendas/items/{item_id}/move/` — Move an item to another agenda
 
 ## Development
 
 ### Project Structure
-
-- `app/`: Main application package
-  - `api/`: API endpoints and routers
-  - `core/`: Core functionality (config, database)
-  - `models/`: SQLAlchemy models
-  - `schemas/`: Pydantic schemas for request/response validation
-  - `services/`: Business logic
-  - `tests/`: Test files
+- `app/`
+  - `api/` — API endpoints and routers
+  - `core/` — config, DB
+  - `models/` — SQLAlchemy models
+  - `schemas/` — Pydantic models
+  - `services/` — business logic
+  - `tests/` — test suite
 
 ### Testing
-
-Run tests with pytest:
 ```bash
 python -m pytest
-```
-
-Run specific tests:
-```bash
+# or
 python -m pytest app/tests/test_services/test_user_service.py
 ```
 
 ### Database Migrations
-
-Create a new migration:
 ```bash
 ./scripts/create_migration.sh <migration_name>
-```
-
-Apply migrations:
-```bash
+# then
 alembic upgrade head
 ```
 
