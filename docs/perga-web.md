@@ -16,9 +16,10 @@ The web client for the Perga personal organizer system, providing a user-friendl
 ## Features
 
 - Daily planner
-- Monthly agenda and backlog
+- Monthly and custom agendas
 - User authentication and settings
 - Responsive design with mobile support
+- Dark theme
 
 ## Tech Stack
 

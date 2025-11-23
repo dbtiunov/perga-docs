@@ -17,7 +17,7 @@ Personal organizer backend that provides the core functionality for the Perga sy
 ## Features
 
 - Daily planner
-- Monthly agenda and backlog
+- Monthly and custom agendas
 - RESTful API with FastAPI
 - User authentication with JWT tokens
 - Comprehensive documentation with Swagger UI
