@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkperga_docs=self.webpackChunkperga_docs||[]).push([[583],{6866:(e,r,s)=>{s.r(r),s.d(r,{default:()=>u});var c=s(6347),t=s(4848);function u(){return(0,t.jsx)(c.rd,{to:"/docs/intro"})}}}]);
