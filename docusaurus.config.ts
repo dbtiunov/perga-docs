@@ -77,12 +77,6 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Documentation',
-        },
-        {
           href: 'https://demo.getperga.me/',
           label: 'Demo',
           position: 'right',
