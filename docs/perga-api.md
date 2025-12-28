@@ -26,7 +26,6 @@ Perga API is a FastAPI-based backend that powers the Perga personal organizer. I
 
 - Demo: https://demo.getperga.me/
 - Repo: https://github.com/dbtiunov/perga-api
-- Docs (this page): https://dbtiunov.github.io/perga-docs/docs/perga-api
 
 ## Tech Stack
 
@@ -84,8 +83,6 @@ uvicorn app.main:app --reload
 ```
 - Base URL: http://localhost:8000
 - Swagger UI: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
-- Health: `GET /health/` → `200 OK`
 
 ## Docker
 

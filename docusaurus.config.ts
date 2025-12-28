@@ -82,13 +82,8 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://github.com/dbtiunov/perga-api',
-          label: 'Perga API',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/dbtiunov/perga-web',
-          label: 'Perga Web',
+          href: 'https://getperga.me/',
+          label: 'Perga Cloud',
           position: 'right',
         },
       ],
@@ -104,6 +99,10 @@ const config: Config = {
               to: '/docs/intro',
             },
             {
+              label: 'Installation',
+              to: '/docs/installation',
+            },
+            {
               label: 'Perga API',
               to: '/docs/perga-api',
             },
@@ -114,14 +113,14 @@ const config: Config = {
           ],
         },
         {
-          title: 'Projects',
+          title: 'GitHub Repositories',
           items: [
             {
-              label: 'Perga API',
+              label: 'Perga API Repo',
               href: 'https://github.com/dbtiunov/perga-api',
             },
             {
-              label: 'Perga Web',
+              label: 'Perga Web Repo',
               href: 'https://github.com/dbtiunov/perga-web',
             },
           ],
@@ -134,8 +133,8 @@ const config: Config = {
               href: 'https://demo.getperga.me/',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/dbtiunov',
+              label: 'Perga Cloud',
+              href: 'https://getperga.me/',
             },
           ],
         },

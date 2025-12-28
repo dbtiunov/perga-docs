@@ -5,7 +5,7 @@ title: Installation
 
 Run Perga locally with Docker in two ways:
 
-- Quick install with `install.sh` (recommended)
+- Quick install with `install.sh`
 - Manual install with `docker compose`
 
 ## Download all install files in one command

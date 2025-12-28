@@ -47,8 +47,8 @@ Create a `.env` file from the example and adjust values as needed:
 cp .env.example .env
 ```
 Available variables:
-- `VITE_API_BASE_URL` — Base URL of Perga API (example: `http://127.0.0.1:8080/api/v1`)
-- `VITE_IS_SIGNUP_DISABLED` — When `true`, hides/disables the Signup option in the UI
+- `API_BASE_URL` — Base URL of Perga API (example: `http://127.0.0.1:8000/api/v1`)
+- `IS_SIGNUP_DISABLED` — When `true`, hides/disables the Signup option in the UI
 
 ## Installation
 
@@ -110,7 +110,7 @@ docker-compose down
 Defaults:
 - Container serves on port 80 via nginx
 - Host is mapped to http://localhost:3000 (compose maps `3000:80`)
-- `VITE_API_BASE_URL` is passed as a build ARG and from `.env` (compose uses `env_file: .env`)
+- `API_BASE_URL` is passed as a build ARG and from `.env` (compose uses `env_file: .env`)
 
 Health endpoint (inside container): `GET /health/` → `200 ok`
 
@@ -162,8 +162,8 @@ Badge: ![Build](https://github.com/dbtiunov/perga-web/actions/workflows/ci.yml/b
 
 ## Troubleshooting
 
-- CORS: ensure `VITE_API_BASE_URL` points to the correct API and that CORS is enabled by the API.
-- Signup hidden: set `VITE_IS_SIGNUP_DISABLED=false` (or omit) to show the Signup link.
+- CORS: ensure `API_BASE_URL` points to the correct API and that CORS is enabled by the API.
+- Signup hidden: set `IS_SIGNUP_DISABLED=false` (or omit) to show the Signup link.
 - Blank page in production: verify nginx serves `index.html` for SPA routes (configured via `try_files` in `nginx.conf`).
 
 ## License
