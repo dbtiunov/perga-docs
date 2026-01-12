@@ -23,7 +23,7 @@ mkdir -p perga-install && cd perga-install && \
 ```
 
 Notes:
-- You can customize .env and nginx.conf files, and the run install script again.
+- You can customize .env and nginx.conf files, and then run install script again.
 
 3) Verify and access
 - Web UI: http://localhost:3000
