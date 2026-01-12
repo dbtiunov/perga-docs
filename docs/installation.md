@@ -52,11 +52,19 @@ Env vars:
 - `CORS_ORIGINS`, `SECRET_KEY` — API security (use a strong random secret)
 - `IS_SIGNUP_DISABLED` — set `true` to disable self‑signup
 
-3) Start services and check status
+3) Start services
 ```bash
 docker compose pull
 docker compose up -d
+
+# check status
 docker compose ps
+
+# stop perga
+docker-compose down
+
+# view logs
+docker-compose logs -f
 ```
 
 4) Verify and access

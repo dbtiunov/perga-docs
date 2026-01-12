@@ -99,7 +99,7 @@ const config: Config = {
               to: '/docs/intro',
             },
             {
-              label: 'Installation',
+              label: 'Installation guide',
               to: '/docs/installation',
             },
             {
