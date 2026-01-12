@@ -8,66 +8,57 @@ Run Perga locally with Docker in two ways:
 - Quick install with `install.sh`
 - Manual install with `docker compose`
 
-## Download all install files in one command
+## Quick install
 
+1) Download install script
 ```bash
 mkdir -p perga-install && cd perga-install && \
-  curl -fsSL \
-    -O https://docs.getperga.me/installation/docker-compose.yml \
-    -O https://docs.getperga.me/installation/.env.example \
-    -O https://docs.getperga.me/installation/install.sh && \
+  curl -fsSL -o install.sh https://docs.getperga.me/installation/install.sh && \
   chmod +x install.sh
 ```
 
-## Quick install (install.sh)
-
+2) Run install script
 ```bash
 ./install.sh
 ```
 
 Notes:
-- On first run, if `.env` is missing, the script creates it from `.env.example` and exits so you can edit it. Re-run `./install.sh` afterward.
+- You can customize .env and nginx.conf files, and the run install script again.
 
-Verify:
+3) Verify and access
 - Web UI: http://localhost:3000
-- OpenAPI docs: http://localhost:8000/docs
+- API docs: http://localhost:8000/docs
 
+## Manual install
 
-## Manual install (docker compose)
+1) Download installation files
+```bash
+mkdir -p perga-install && cd perga-install && \
+  mkdir -p nginx && \
+  curl -fsSL \
+    -o docker-compose.yml https://docs.getperga.me/installation/docker-compose.yml \
+    -o .env.example https://docs.getperga.me/installation/.env.example \
+    -o nginx/nginx.conf https://docs.getperga.me/installation/nginx/nginx.conf
+```
 
-1) Create and edit your env
+2) Create and edit your env
 ```bash
 cp .env.example .env
 # open .env and set strong SECRET_KEY and DB creds
 ```
 Env vars:
-- `POSTGRES_*` — Postgres credentials and DB name
+- `POSTGRES_*` — Postgres DB host, name and credentials
 - `API_BASE_URL` — Web → API URL (default `http://127.0.0.1:8000/api/v1`)
 - `CORS_ORIGINS`, `SECRET_KEY` — API security (use a strong random secret)
 - `IS_SIGNUP_DISABLED` — set `true` to disable self‑signup
 
-2) Start services
+3) Start services and check status
 ```bash
 docker compose pull
 docker compose up -d
-```
-
-Check status
-```bash
 docker compose ps
 ```
 
-Access
+4) Verify and access
 - Web UI: http://localhost:3000
-- OpenAPI docs: http://localhost:8000/docs
-
-
-
----
-
-### Update to a newer version
-```bash
-docker compose pull
-docker compose up -d
-```
-
+- API docs: http://localhost:8000/docs
